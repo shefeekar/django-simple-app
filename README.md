@@ -90,6 +90,11 @@ python manage.py runserver 0:8001
 ```
 Try opening [http://localhost:8001](http://localhost:8001) in the browser.
 Now you are good to go.
+create Dockerfile for building docker image 
+docker build -t django-app .
+Run the application using 
+docker run -d --network="host" django-app
+check the logs and ensure app is working propely
 
 ### 9. URLs
 #### Signup: [http://localhost:8001/signup](http://localhost:8001/signup)
