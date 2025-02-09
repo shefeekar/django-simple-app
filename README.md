@@ -65,7 +65,8 @@ Create a `Dockerfile` to containerize the Django application:
 ```
 FROM python:3.8
 WORKDIR /app
-RUN apt-get update && apt-get install -y --no-install-recommends \   # building a Python application that needs mysqlclient (Python MySQL library), you might run this before installing 
+RUN apt-get update && apt-get install -y --no-install-recommends \   # building a Python application that needs mysqlclient                                                               
+                                                             # (Python MySQL library), you might run this before installing 
                                                                      # dependencies.
     default-libmysqlclient-dev \
     build-essential \
