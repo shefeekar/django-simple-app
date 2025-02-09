@@ -19,6 +19,7 @@ Before setting up the project, ensure you have the following installed:
 ```
 git clone https://github.com/shefeekar/django-simple-app.git
 cd django-simple-app
+git checkout appcode
 ```
 
 ### 2. Configure Database Settings
