@@ -65,7 +65,8 @@ Create a `Dockerfile` to containerize the Django application:
 ```
 FROM python:3.8
 WORKDIR /app
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \   # building a Python application that needs mysqlclient (Python MySQL library), you might run this before installing 
+                                                                     # dependencies.
     default-libmysqlclient-dev \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
@@ -130,7 +131,8 @@ services:
     networks:
       - django-network
     command: >
-      sh -c "python manage.py makemigrations && \
+      sh -c "python manage.py makemigrations && \           #This command sets up the Django application by generating migrations, applying them to the database, and collecting static 
+                                                             #files. Finally, it starts the Django development server on port 8001, making the app accessible externally
             python manage.py migrate && \
             python manage.py collectstatic --noinput && \
             python manage.py runserver 0.0.0.0:8001"
